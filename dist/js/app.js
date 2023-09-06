@@ -1,3 +1,8 @@
+/*  
+  Для быстрого поиска скрипта в поле поиска вводите : SCRIPT-НАЗВАНИЕ СТРАНИЦЫ
+  Для быстрого поиска свайпера в поле поиска вводите : SWIPERS-НАЗВАНИЕ СТРАНИЦЫ
+*/
+
 function isWebp() {
   // Проверка поддержки webp
   function testWebP(callback) {
@@ -21,7 +26,7 @@ function isWebp() {
 isWebp();
 
 document.addEventListener('DOMContentLoaded', function () {
-  //////////////////////////////// HEADER //////////////////////////////////
+  //////////////////////////////// SCRIPT-HEADER //////////////////////////////////
   if (document.querySelector('.header')) {
     const header = document.querySelector('.header');
     const headerButton = header.querySelector('.header__button');
@@ -61,11 +66,31 @@ const rem = function (rem) {
   }
 };
 
-//////////////////////////////// MAIN //////////////////////////////////
+//////////////////////////////// SWIPERS-MAIN //////////////////////////////////
 
 const swiperMainFirst = new Swiper('.swiper-main-second', {
   pagination: {
     el: '.swiper-main-pagination',
+    clickable: true,
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: true,
+  },
+  loop: true,
+  fadeEffect: { crossFade: true },
+  virtualTranslate: true,
+  speed: 1000,
+  slidersPerView: 1,
+  effect: 'fade',
+});
+
+//////////////////////////////// SWIPERS-PROJECT //////////////////////////////////
+
+const swiperProjectFirst = new Swiper('.swiper-project', {
+  pagination: {
+    el: '.swiper-project-pagination',
+    clickable: true,
   },
   autoplay: {
     delay: 2500,
