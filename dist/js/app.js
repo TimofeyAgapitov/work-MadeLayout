@@ -53,6 +53,23 @@ document.addEventListener('DOMContentLoaded', function () {
       headerPopup.style.display = 'none';
     });
   }
+  //////////////////////////////// SCRIPT-REALTY //////////////////////////////////
+  if (document.querySelector('.realty')) {
+    const realty = document.querySelector('.realty');
+    const realtyTypeComponents = realty.querySelectorAll(
+      '.realty-type__component'
+    );
+    realtyTypeComponents[0].classList.add('active');
+    // Cобытие если нажимают на плашку с подвидом недвижимости
+    realtyTypeComponents.forEach((component) => {
+      component.addEventListener('click', () => {
+        realtyTypeComponents.forEach((component) => {
+          component.classList.remove('active');
+        });
+        component.classList.add('active');
+      });
+    });
+  }
 });
 
 //////////////////////////////// SWIPERS //////////////////////////////////
@@ -90,6 +107,25 @@ const swiperMainFirst = new Swiper('.swiper-main-second', {
 const swiperProjectFirst = new Swiper('.swiper-project', {
   pagination: {
     el: '.swiper-project-pagination',
+    clickable: true,
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: true,
+  },
+  loop: true,
+  fadeEffect: { crossFade: true },
+  virtualTranslate: true,
+  speed: 1000,
+  slidersPerView: 1,
+  effect: 'fade',
+});
+
+//////////////////////////////// SWIPERS-REALTY //////////////////////////////////
+
+const swiperRealtyFirst = new Swiper('.swiper-realty', {
+  pagination: {
+    el: '.swiper-realty-pagination',
     clickable: true,
   },
   autoplay: {
