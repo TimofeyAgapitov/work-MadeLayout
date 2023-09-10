@@ -40,11 +40,11 @@ export const ttfTowoff = () => {
         )
       )
       // Конвертируем в .woff
-      // .pipe(
-      //   fonter({
-      //     formats: ['woff'],
-      //   })
-      // )
+      .pipe(
+        fonter({
+          formats: ['woff'],
+        })
+      )
       // // Выгружаем в папку c результатом
       // .pipe(app.gulp.dest(`${app.path.build.fonts}`))
       // Ищем файлы шрифтов .ttf
