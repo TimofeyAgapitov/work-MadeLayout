@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { title: "Главная" })
+  <body>
+    @@include('html/header.html', { attr: "transparent"})
+    <main class="main">
+      <section class="main__section-first">
+        <div class="container main__container-first">
+          <img
+            class="main__decoration-top setup--hover-grayscale"
+            src="@img/main/main--s1_decoration-2.png"
+            alt=""
+          />
+          <div class="main__logotype">
+            <svg class="logotype">
+              <use xlink:href="@img/sprite.svg#logotype-yellow"></use>
+            </svg>
+          </div>
+          <img
+            class="main__decoration-bottom setup--hover-grayscale"
+            src="@img/main/main--s1_decoration-1.png"
+            alt=""
+          />
+        </div>
+      </section>
+      <section class="main__section-second">
+        <div class="container main__container-second">
+          <div class="main__content content">
+            <div class="content__left-block">
+              <div class="content__background-left">
+                <img
+                  class="picture setup--hover-grayscale"
+                  src="@img/main/main--s2_backgroundPhoto-1.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="content__info-left">
+                <p class="content__title">О компании</p>
+                <p class="content__text">
+                  Обладает большим опытом и&nbsp;экспертизой для достижения
+                  максимальной окупаемости и&nbsp;финансовой стабильности для
+                  наших клиентов
+                </p>
+              </div>
+            </div>
+            <div class="content__center-block">
+              <div class="content__background-center">
+                <img
+                  class="picture setup--hover-grayscale"
+                  src="@img/main/main--s2_backgroundPhoto-2.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="content__info-center">
+                <p class="content__title">Инвестиции</p>
+                <p class="content__text">
+                  Управление рисками, выбор активов и&nbsp;диверсификация
+                  портфеля являются ключевыми элементами инвестиционной
+                  стратегии
+                </p>
+              </div>
+            </div>
+            <div class="content__right-block">
+              <div class="swiper swiper-main-second">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="slide-main-second">
+                      <img
+                        class="picture--special setup--hover-grayscale"
+                        src="@img/main/main--s2_swiperPhoto-1.jpg"
+                        alt=""
+                      />
+                      <div class="content__info-right">
+                        <div class="content__logotype swiper__logotype">
+                          <svg class="logotype">
+                            <use
+                              xlink:href="@img/sprite.svg#logotype-white"
+                            ></use>
+                          </svg>
+                        </div>
+                        <div class="content__text swiper__text">
+                          <p class="swiper-slide-1"><span>10</span> лет</p>
+                          <p class="swiper-slide-1">
+                            <span>14</span> <br />
+                            отраслей
+                          </p>
+                          <p class="swiper-slide-1">
+                            <span>1066</span> <br />
+                            клиентов
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide-main-second">
+                      <img
+                        class="picture--special setup--hover-grayscale"
+                        src="@img/main/main--s2_swiperPhoto-2.jpg"
+                        alt=""
+                      />
+                      <div class="content__info-right">
+                        <p class="content__title swiper__title">
+                          Проекты<br />Бизнес-центр Чайка-плаза
+                        </p>
+                        <div class="content__text swiper__text">
+                          <p class="swiper-slide-2">
+                            г. Москва, Варшавское шоссе, д. 25а, стр.6.
+                          </p>
+                          <p class="swiper-slide-2">
+                            Реконструирован в стиле «модерн» на базе корпусов в
+                            2008 году
+                          </p>
+                          <p class="swiper-slide-2">Площадь 23 000 кв.м.</p>
+                          <p class="swiper-slide-2">Бизнес-центр класса «B+»</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide-main-second">
+                      <img
+                        class="picture--special setup--hover-grayscale"
+                        src="@img/main/main--s2_swiperPhoto-1.jpg"
+                        alt=""
+                      />
+                      <div class="content__info-right">
+                        <div class="content__logotype swiper__logotype">
+                          <svg class="logotype">
+                            <use
+                              xlink:href="@img/sprite.svg#logotype-white"
+                            ></use>
+                          </svg>
+                        </div>
+                        <div class="content__text swiper__text">
+                          <p class="swiper-slide-1"><span>10</span> лет</p>
+                          <p class="swiper-slide-1">
+                            <span>14</span> <br />
+                            отраслей
+                          </p>
+                          <p class="swiper-slide-1">
+                            <span>1066</span> <br />
+                            клиентов
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination swiper-main-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('html/footer.html', {}) @@include('html/foot.html',{})
+    <script src="js/app.min.js"></script>
+  </body>
+</html>

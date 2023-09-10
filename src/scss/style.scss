@@ -1,0 +1,23 @@
+@import 'set';
+@import 'setup';
+@import 'fonts';
+
+@import 'header';
+@import 'footer';
+
+@import 'main';
+
+@import 'partners';
+
+@import 'project';
+
+@import 'realty';
+
+@import 'about-us';
+
+@import 'subcategories';
+
+body {
+  color: $white-color;
+  background-color: $black-color;
+}
