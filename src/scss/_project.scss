@@ -79,6 +79,10 @@
         width: 72.7rem;
         height: 63.2rem;
       }
+      &__photo {
+        object-fit: cover;
+        height: 63.2rem;
+      }
       &-pagination {
         bottom: 4rem !important;
       }

@@ -114,9 +114,8 @@ ul li {
 }
 
 .container {
-  width: 192rem;
+  width: 184rem;
   margin: 0 auto;
-  padding: 0 3.6rem;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -325,6 +324,17 @@ section {
   transition: all 0.5s ease-in-out;
 }
 
+.filter-popup-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #101010;
+  opacity: 0.25;
+  z-index: 1000;
+}
+
 .swiper .swiper-pagination-bullet {
   width: 1.5rem;
   height: 1.5rem;
@@ -392,8 +402,9 @@ section {
 
 .header__container.transparent {
   position: absolute;
-  top: 0;
   left: 0;
+  right: 0;
+  margin: 0 auto;
   z-index: 1000;
 }
 
@@ -536,6 +547,9 @@ section {
 
 .header__popup {
   display: none;
+}
+
+.header__popup-container {
   position: absolute;
   top: 0;
   right: 0rem;
@@ -544,8 +558,8 @@ section {
   height: auto;
   padding: 1.2rem 1.5rem 1.2rem 4.5rem;
   background-color: rgba(41, 41, 41, 0.8);
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
 }
 
 .header__popup-close {
@@ -1047,6 +1061,7 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  cursor: pointer;
 }
 
 .partners-icon {
@@ -1152,6 +1167,12 @@ section {
 
 .project .swiper-project__slide {
   width: 72.7rem;
+  height: 63.2rem;
+}
+
+.project .swiper-project__photo {
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 63.2rem;
 }
 
@@ -1277,6 +1298,9 @@ section {
 }
 
 .realty .swiper-realty__photo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 68.4rem;
   -webkit-filter: grayscale(90%);
           filter: grayscale(90%);
 }
@@ -1726,6 +1750,44 @@ section {
   margin-bottom: 4rem;
 }
 
+.subcategories-projects__content .content__filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.subcategories-projects__content .content__filters .filters__button {
+  color: #7d7d7d;
+  text-transform: uppercase;
+  padding-right: 4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 0.2rem solid #7d7d7d;
+}
+
+.subcategories-projects__content .content__filters .filters__button:not(:first-child) {
+  padding-left: 4rem;
+}
+
+.subcategories-projects__content .content__filters .filters__button.active {
+  color: #f8eb00;
+  border-bottom-color: #f8eb00;
+  position: relative;
+}
+
+.subcategories-projects__content .content__filters .filters__button.active::before {
+  content: "";
+  position: absolute;
+  bottom: -0.2rem;
+  right: -0.7rem;
+  width: 1.6rem;
+  height: 2.5rem;
+  border-right: 0.3rem solid #f8eb00;
+  -webkit-transform: skew(-30deg);
+      -ms-transform: skew(-30deg);
+          transform: skew(-30deg);
+}
+
 .subcategories-projects__content .content__projects {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1764,6 +1826,7 @@ section {
 
 .subcategories-projects__content .content__projects .project-box:hover .project-center {
   border-left-color: #101010;
+  border-top-color: #101010;
 }
 
 .subcategories-projects__content .content__projects .project-box:hover .project-right {
@@ -1931,6 +1994,9 @@ section {
 }
 
 .subcategories-projects__content .content__projects .project-status.develope {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   color: #979797;
 }
 
@@ -2142,7 +2208,7 @@ body {
     height: 5.8rem;
   }
 
-  .header__popup {
+  .header__popup-container {
     width: 66rem;
     padding: 2.4rem 3rem 2.4rem 9rem;
     left: 0;
@@ -2860,6 +2926,29 @@ body {
 
   .subcategories-projects__content .content__subtitle {
     width: 100%;
+  }
+
+  .subcategories-projects__content .content__filters {
+    overflow-y: auto;
+  }
+
+  .subcategories-projects__content .content__filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .subcategories-projects__content .content__filters .filters__button {
+    border-bottom-width: 0.3rem;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    padding-bottom: 1.6rem;
+  }
+
+  .subcategories-projects__content .content__filters .filters__button.active::before {
+    height: 5rem;
+    bottom: -0.3rem;
+    right: -1.5rem;
+    border-right-width: 0.4rem;
   }
 
   .subcategories-projects__content .content__projects .project-box {

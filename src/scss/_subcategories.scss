@@ -181,6 +181,37 @@
           width: 137.9rem;
           margin-bottom: 4rem;
         }
+        &__filters {
+          display: flex;
+          margin-bottom: 4rem;
+          .filters {
+            &__button {
+              color: #7d7d7d;
+              text-transform: uppercase;
+              padding-right: 4rem;
+              padding-bottom: 0.4rem;
+              border-bottom: 0.2rem solid #7d7d7d;
+              &:not(:first-child) {
+                padding-left: 4rem;
+              }
+              &.active {
+                color: $yellow-color;
+                border-bottom-color: $yellow-color;
+                position: relative;
+                &::before {
+                  content: '';
+                  position: absolute;
+                  bottom: -0.2rem;
+                  right: -0.7rem;
+                  width: 1.6rem;
+                  height: 2.5rem;
+                  border-right: 0.3rem solid $yellow-color;
+                  transform: skew(-30deg);
+                }
+              }
+            }
+          }
+        }
         &__projects {
           display: flex;
           flex-direction: column;
@@ -207,6 +238,7 @@
                 .project {
                   &-center {
                     border-left-color: $black-color;
+                    border-top-color: $black-color;
                   }
                   &-right {
                     border-left-color: $black-color;
@@ -330,6 +362,7 @@
               color: $yellow-color;
               transform: rotate(-90deg);
               &.develope {
+                flex: none;
                 color: $light-grey-color;
               }
             }
@@ -354,6 +387,27 @@
         .content {
           &__subtitle {
             width: 100%;
+          }
+          &__filters {
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+              display: none;
+            }
+            .filters {
+              &__button {
+                border-bottom-width: 0.3rem;
+                flex: none;
+                padding-bottom: 1.6rem;
+                &.active {
+                  &::before {
+                    height: 5rem;
+                    bottom: -0.3rem;
+                    right: -1.5rem;
+                    border-right-width: 0.4rem;
+                  }
+                }
+              }
+            }
           }
           &__projects {
             .project {

@@ -9,8 +9,9 @@
     background-color: transparent;
     &.transparent {
       position: absolute;
-      top: 0;
       left: 0;
+      right: 0;
+      margin: 0 auto;
       z-index: 1000;
     }
     &.marginbottom {
@@ -126,15 +127,17 @@
 
   &__popup {
     display: none;
-    position: absolute;
-    top: 0;
-    right: 0rem;
-    z-index: 1100;
-    width: 33rem;
-    height: auto;
-    padding: 1.2rem 1.5rem 1.2rem 4.5rem;
-    background-color: rgba(41, 41, 41, 0.8);
-    backdrop-filter: blur(1rem);
+    &-container {
+      position: absolute;
+      top: 0;
+      right: 0rem;
+      z-index: 1100;
+      width: 33rem;
+      height: auto;
+      padding: 1.2rem 1.5rem 1.2rem 4.5rem;
+      background-color: rgba(41, 41, 41, 0.8);
+      backdrop-filter: blur(7px);
+    }
     &-close {
       width: 3.2rem;
       height: 3.2rem;
@@ -289,9 +292,11 @@
       }
     }
     &__popup {
-      width: 66rem;
-      padding: 2.4rem 3rem 2.4rem 9rem;
-      left: 0;
+      &-container {
+        width: 66rem;
+        padding: 2.4rem 3rem 2.4rem 9rem;
+        left: 0;
+      }
       &-close {
         width: 6.4rem;
         height: 6.4rem;

@@ -46,6 +46,8 @@
   .swiper {
     &-realty {
       &__photo {
+        object-fit: cover;
+        height: 68.4rem;
         filter: grayscale(90%);
       }
       &-pagination {
