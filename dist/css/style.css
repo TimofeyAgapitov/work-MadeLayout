@@ -216,6 +216,18 @@ section {
   cursor: pointer;
 }
 
+.setup--btn-black:hover .text {
+  color: #979797;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.setup--btn-black:hover .btn {
+  background-color: #979797;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
 .setup--btn-black .text {
   color: #101010;
   font-size: 1.8rem;
@@ -255,6 +267,18 @@ section {
           align-items: center;
   gap: 1.6rem;
   cursor: pointer;
+}
+
+.setup--btn-yellow:hover .text {
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.setup--btn-yellow:hover .btn {
+  background-color: #ffffff;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .setup--btn-yellow .text {
@@ -1906,6 +1930,24 @@ section {
           transform: rotate(-90deg);
 }
 
+.subcategories-projects__content .content__projects .project-status.develope {
+  color: #979797;
+}
+
+.subcategories-projects__content .content__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #f8eb00;
+  margin-top: 4rem;
+}
+
 body {
   color: #ffffff;
   background-color: #101010;
@@ -2925,6 +2967,10 @@ body {
     -webkit-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
             transform: rotate(0deg);
+  }
+
+  .subcategories-projects__content .content__button {
+    margin-top: 6.4rem;
   }
 }
 

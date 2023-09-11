@@ -109,6 +109,16 @@ $poluton-grey-color: #454545;
   align-items: center;
   gap: 1.6rem;
   cursor: pointer;
+  &:hover {
+    .text {
+      color: $light-grey-color;
+      transition: all 0.5s ease-in-out;
+    }
+    .btn {
+      background-color: $light-grey-color;
+      transition: all 0.5s ease-in-out;
+    }
+  }
   .text {
     color: $black-color;
     font-size: 1.8rem;
@@ -137,6 +147,16 @@ $poluton-grey-color: #454545;
   align-items: center;
   gap: 1.6rem;
   cursor: pointer;
+  &:hover {
+    .text {
+      color: $white-color;
+      transition: all 0.5s ease-in-out;
+    }
+    .btn {
+      background-color: $white-color;
+      transition: all 0.5s ease-in-out;
+    }
+  }
   .text {
     color: $yellow-color;
     font-size: 1.8rem;

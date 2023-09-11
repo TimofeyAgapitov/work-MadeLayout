@@ -329,8 +329,18 @@
             &-status {
               color: $yellow-color;
               transform: rotate(-90deg);
+              &.develope {
+                color: $light-grey-color;
+              }
             }
           }
+        }
+        &__button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $yellow-color;
+          margin-top: 4rem;
         }
       }
     }
@@ -422,6 +432,9 @@
                 transform: rotate(0deg);
               }
             }
+          }
+          &__button {
+            margin-top: 6.4rem;
           }
         }
       }
