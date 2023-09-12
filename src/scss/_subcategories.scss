@@ -12,6 +12,7 @@
         background-image: url('../img/subcategories/subcategories--backgroundPhoto-desktop.png');
         background-repeat: no-repeat;
         background-size: cover;
+        backdrop-filter: grayscale(90%);
         &__info {
           display: flex;
           align-items: flex-end;
@@ -414,10 +415,10 @@
               &-box {
                 flex-direction: column;
                 &.default {
-                  height: 129.4rem;
+                  height: auto;
                 }
                 &.extend {
-                  height: 140.4rem;
+                  height: auto;
                   & div:nth-child(1) {
                     order: 2;
                   }
