@@ -552,7 +552,7 @@ section {
 .header__popup-container {
   position: absolute;
   top: 0;
-  right: 0rem;
+  right: -4rem;
   z-index: 1100;
   width: 33rem;
   height: auto;
