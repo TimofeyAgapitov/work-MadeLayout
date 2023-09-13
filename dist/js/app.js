@@ -3,6 +3,16 @@
   Для быстрого поиска свайпера в поле поиска вводите : SWIPERS-НАЗВАНИЕ СТРАНИЦЫ
 */
 
+wow = new WOW({
+  boxClass: 'wow',
+  animateClass: 'animate__animated',
+  offset: 0,
+  mobile: true,
+  live: true,
+});
+
+wow.init();
+
 function isWebp() {
   // Проверка поддержки webp
   function testWebP(callback) {
@@ -38,8 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const headerPopupClose = headerPopupContainer.querySelector(
       '.header__popup-close'
     );
-
-    console.log(headerPopup);
 
     headerButton.addEventListener('click', () => {});
     // Событие если нажимают на элемент меню
