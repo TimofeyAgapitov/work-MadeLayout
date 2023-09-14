@@ -139,10 +139,10 @@ const swiperProjectFirst = new Swiper('.swiper-project', {
     el: '.swiper-project-pagination',
     clickable: true,
   },
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: true,
-  },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: true,
+  // },
   loop: true,
   fadeEffect: { crossFade: true },
   virtualTranslate: true,
