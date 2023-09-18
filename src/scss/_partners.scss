@@ -15,6 +15,9 @@
           width: 57.3rem;
           color: $light-grey-color;
           margin-bottom: 17.3rem;
+          & > br {
+            display: none;
+          }
         }
         &__info {
           display: flex;
@@ -77,6 +80,9 @@
           &__text {
             width: 100%;
             margin-bottom: 4rem;
+            & > br {
+              display: block;
+            }
           }
           &__info {
             gap: 8rem;

@@ -235,7 +235,7 @@
               &:hover {
                 background-color: $yellow-color;
                 color: $black-color;
-                transition: all 0.25s ease-in-out;
+                // transition: all 0.25s ease-in-out;
                 .project {
                   &-center {
                     border-left-color: $black-color;
@@ -303,6 +303,7 @@
               filter: grayscale(90%);
             }
             &-content {
+              position: relative;
               display: flex;
               align-items: flex-end;
               gap: 5rem;
@@ -331,6 +332,8 @@
             }
             &-location {
               cursor: pointer;
+              position: absolute;
+              left: 38rem;
               &__icon {
                 width: 3.2rem;
                 height: 3.2rem;
@@ -375,6 +378,12 @@
           justify-content: center;
           color: $yellow-color;
           margin-top: 4rem;
+          & > button {
+            &:hover {
+              color: $white-color;
+              transition: all 0.5 ease-in-out;
+            }
+          }
         }
       }
     }
@@ -468,6 +477,7 @@
                 }
               }
               &-location {
+                position: static;
                 &__icon {
                   width: 4.8rem;
                   height: 4.8rem;

@@ -609,7 +609,7 @@ section {
 
 .header__popup-item.active {
   position: relative;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .header__popup-item.active::before {
@@ -1012,6 +1012,10 @@ section {
   width: 57.3rem;
   color: #979797;
   margin-bottom: 17.3rem;
+}
+
+.partners__content .content-left__text > br {
+  display: none;
 }
 
 .partners__content .content-left__info {
@@ -1418,8 +1422,8 @@ section {
 }
 
 .realty .type-component__button .icon {
-  width: 0.8rem;
-  height: 1.6rem;
+  width: 2.8rem;
+  height: 1.9rem;
 }
 
 .realty .type-component__content {
@@ -1823,8 +1827,6 @@ section {
 .subcategories-projects__content .content__projects .project-box:hover {
   background-color: #f8eb00;
   color: #101010;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
 }
 
 .subcategories-projects__content .content__projects .project-box:hover .project-center {
@@ -1902,6 +1904,7 @@ section {
 }
 
 .subcategories-projects__content .content__projects .project-content {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1951,6 +1954,8 @@ section {
 
 .subcategories-projects__content .content__projects .project-location {
   cursor: pointer;
+  position: absolute;
+  left: 38rem;
 }
 
 .subcategories-projects__content .content__projects .project-location__icon {
@@ -2015,6 +2020,12 @@ section {
           justify-content: center;
   color: #f8eb00;
   margin-top: 4rem;
+}
+
+.subcategories-projects__content .content__button > button:hover {
+  color: #ffffff;
+  -webkit-transition: all 0.5 ease-in-out;
+  transition: all 0.5 ease-in-out;
 }
 
 body {
@@ -2507,6 +2518,10 @@ body {
     margin-bottom: 4rem;
   }
 
+  .partners__content .content-left__text > br {
+    display: block;
+  }
+
   .partners__content .content-left__info {
     gap: 8rem;
   }
@@ -2743,7 +2758,7 @@ body {
   .realty .type-component__content .content-right {
     width: 71rem;
     height: 49.6rem;
-    padding: 4rem 2rem;
+    padding: 4rem;
   }
 
   .realty .type-component__content .content-right__title {
@@ -2757,7 +2772,7 @@ body {
 
   .realty .type-component__content .content-right__button {
     bottom: 4rem;
-    left: 2rem;
+    left: 4rem;
   }
 
   .about-us__content .content-top__title {
@@ -3035,6 +3050,10 @@ body {
   .subcategories-projects__content .content__projects .project-icons__icon {
     width: 4.8rem;
     height: 4.8rem;
+  }
+
+  .subcategories-projects__content .content__projects .project-location {
+    position: static;
   }
 
   .subcategories-projects__content .content__projects .project-location__icon {
