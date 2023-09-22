@@ -46,7 +46,7 @@ export const ttfTowoff = () => {
         })
       )
       // // Выгружаем в папку c результатом
-      // .pipe(app.gulp.dest(`${app.path.build.fonts}`))
+      .pipe(app.gulp.dest(`${app.path.build.fonts}`))
       // Ищем файлы шрифтов .ttf
       .pipe(app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`))
       // Конверитурем в woff2

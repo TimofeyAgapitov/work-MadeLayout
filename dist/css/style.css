@@ -667,11 +667,11 @@ section {
 }
 
 .footer {
-  margin-top: 10rem;
+  margin-top: 4rem;
 }
 
 .footer__logotype {
-  margin-right: 17.1rem;
+  margin-right: 21.4rem;
   cursor: pointer;
 }
 
@@ -709,14 +709,17 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #292929;
+  background-color: #979797;
 }
 
 .footer__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 17.1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4rem;
   margin-right: auto;
 }
 
@@ -724,11 +727,11 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 2.8rem;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 4rem;
 }
 
 .footer__item {
@@ -803,7 +806,7 @@ section {
 }
 
 .footer__documents p {
-  color: #292929;
+  color: #979797;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -1463,6 +1466,12 @@ section {
 }
 
 .realty .type-component__content .content-right__text {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  max-width: 65.9rem;
   color: #101010;
   font-size: 2rem;
   font-style: normal;
@@ -1473,7 +1482,7 @@ section {
 .realty .type-component__content .content-right__button {
   position: absolute;
   bottom: 3.6rem;
-  left: 3.6rem;
+  right: 3.6rem;
 }
 
 .about-us__content {
@@ -2276,6 +2285,10 @@ body {
     font-size: 2.8rem;
   }
 
+  .footer {
+    margin-top: 16rem;
+  }
+
   .footer__logotype {
     margin: 0;
     margin-bottom: 8rem;
@@ -2312,12 +2325,19 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     gap: 4.8rem;
     margin-bottom: 8rem;
   }
 
   .footer__list-box {
     gap: 4.8rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .footer__item {
@@ -2763,16 +2783,21 @@ body {
 
   .realty .type-component__content .content-right__title {
     font-size: 4rem;
-    margin-bottom: 3.2rem;
+    margin-bottom: 6rem;
   }
 
   .realty .type-component__content .content-right__text {
+    position: static;
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
+    max-width: 100%;
     font-size: 2.8rem;
   }
 
   .realty .type-component__content .content-right__button {
     bottom: 4rem;
-    left: 4rem;
+    right: 4rem;
   }
 
   .about-us__content .content-top__title {

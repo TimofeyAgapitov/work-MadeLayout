@@ -206,6 +206,10 @@
             margin-bottom: 3.6rem;
           }
           &__text {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 65.9rem;
             color: $black-color;
             font-size: 2rem;
             font-style: normal;
@@ -215,7 +219,7 @@
           &__button {
             position: absolute;
             bottom: 3.6rem;
-            left: 3.6rem;
+            right: 3.6rem;
           }
         }
       }
@@ -277,14 +281,17 @@
             padding: 4rem;
             &__title {
               font-size: 4rem;
-              margin-bottom: 3.2rem;
+              margin-bottom: 6rem;
             }
             &__text {
+              position: static;
+              transform: translateY(0%);
+              max-width: 100%;
               font-size: 2.8rem;
             }
             &__button {
               bottom: 4rem;
-              left: 4rem;
+              right: 4rem;
             }
           }
         }
