@@ -396,6 +396,40 @@ section {
   font-style: normal;
 }
 
+@-webkit-keyframes flipLogotype {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+
+  20% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes flipLogotype {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+
+  20% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
 .header__container {
   background-color: transparent;
 }
@@ -451,6 +485,8 @@ section {
   font-weight: 400;
   line-height: 100%;
   text-transform: uppercase;
+  -webkit-animation: flipLogotype 10s linear infinite 2s;
+          animation: flipLogotype 10s linear infinite 2s;
 }
 
 .header__contacts {
