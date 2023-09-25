@@ -412,12 +412,12 @@ section {
             transform: rotateY(0deg);
   }
 
-  60% {
+  50% {
     -webkit-transform: rotateY(-90deg);
             transform: rotateY(-90deg);
   }
 
-  70% {
+  60% {
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
   }
@@ -444,12 +444,12 @@ section {
             transform: rotateY(0deg);
   }
 
-  60% {
+  50% {
     -webkit-transform: rotateY(-90deg);
             transform: rotateY(-90deg);
   }
 
-  70% {
+  60% {
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
   }
