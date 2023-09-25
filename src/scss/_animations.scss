@@ -9,3 +9,18 @@
     transform: rotateY(360deg);
   }
 }
+
+@keyframes moveLight {
+  0% {
+    transform: translateX(-35rem) skewX(45deg);
+  }
+  45% {
+    transform: translateX(40rem) skewX(45deg);
+  }
+  50% {
+    transform: translateX(45rem) skewX(45deg);
+  }
+  100% {
+    transform: translateX(120rem) skewX(45deg);
+  }
+}
