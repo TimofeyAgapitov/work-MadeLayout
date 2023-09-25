@@ -2951,10 +2951,12 @@ body {
     -webkit-box-flex: 1;
         -ms-flex: 1 0;
             flex: 1 0;
+    bottom: 8rem;
+    left: 4rem;
   }
 
   .about-us__content .content-bottom__info {
-    width: 100%;
+    width: 63rem;
   }
 
   .about-us__content .content-bottom__info .info-title {

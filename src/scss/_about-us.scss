@@ -77,9 +77,11 @@
           // background-image: url('../img/about-us/about-us--backgroundPhoto-mobile.png');
           &__box {
             flex: 1 0;
+            bottom: 8rem;
+            left: 4rem;
           }
           &__info {
-            width: 100%;
+            width: 63rem;
             .info {
               &-title {
                 padding-bottom: 2.4rem;
