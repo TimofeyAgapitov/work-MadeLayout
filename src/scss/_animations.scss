@@ -33,3 +33,12 @@
     transform: translateX(120rem) skewX(45deg);
   }
 }
+
+@keyframes fadeInFromNone {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

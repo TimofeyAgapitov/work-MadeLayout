@@ -504,6 +504,26 @@ section {
   }
 }
 
+@-webkit-keyframes fadeInFromNone {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .header__container {
   background-color: transparent;
 }
@@ -1489,6 +1509,10 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-animation: fadeInLeft 0.8s linear;
+          animation: fadeInLeft 0.8s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .realty .type-component--active {
