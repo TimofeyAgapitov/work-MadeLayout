@@ -579,8 +579,6 @@ section {
   font-weight: 400;
   line-height: 100%;
   text-transform: uppercase;
-  -webkit-animation: flipLogotype 8s linear infinite 3s;
-          animation: flipLogotype 8s linear infinite 3s;
 }
 
 .header__contacts {
@@ -1509,8 +1507,8 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: fadeInLeft 0.8s linear;
-          animation: fadeInLeft 0.8s linear;
+  -webkit-animation: fadeIn 0.8s linear;
+          animation: fadeIn 0.8s linear;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
