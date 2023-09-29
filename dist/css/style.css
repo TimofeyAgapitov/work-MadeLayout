@@ -548,8 +548,8 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 4.2rem;
-  padding-bottom: 4.2rem;
+  padding-top: 4.1rem;
+  padding-bottom: 3.6rem;
 }
 
 .header__content::before {
@@ -795,7 +795,7 @@ section {
 }
 
 .footer {
-  margin-top: 4rem;
+  padding: 2rem 0;
 }
 
 .footer__logotype {
@@ -804,19 +804,18 @@ section {
 }
 
 .footer__logotype .logotype {
-  width: 14.3rem;
-  height: 4.2rem;
+  width: 11.5rem;
+  height: 3.35rem;
 }
 
 .footer__content {
-  padding: 3.6rem 0;
+  padding: 3rem 0;
 }
 
 .footer__content-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 4.5rem;
 }
 
 .footer__content-bottom {
@@ -2473,6 +2472,7 @@ body {
 
   .footer {
     margin-top: 16rem;
+    padding: 0;
   }
 
   .footer__logotype {
@@ -2485,12 +2485,16 @@ body {
     height: 6rem;
   }
 
+  .footer__content {
+    padding: 0;
+    padding-bottom: 6rem;
+  }
+
   .footer__content-top {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding-bottom: 8rem;
   }
 
   .footer__content-bottom {

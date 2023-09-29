@@ -1,18 +1,17 @@
 .footer {
-  margin-top: 4rem;
+  padding: 2rem 0;
   &__logotype {
     margin-right: 21.4rem;
     cursor: pointer;
     .logotype {
-      width: 14.3rem;
-      height: 4.2rem;
+      width: 11.5rem;
+      height: 3.35rem;
     }
   }
   &__content {
-    padding: 3.6rem 0;
+    padding: 3rem 0;
     &-top {
       display: flex;
-      padding-bottom: 4.5rem;
     }
     &-bottom {
       display: flex;
@@ -114,6 +113,7 @@
 @media (max-width: 48em) {
   .footer {
     margin-top: 16rem;
+    padding: 0;
     &__logotype {
       margin: 0;
       margin-bottom: 8rem;
@@ -123,9 +123,10 @@
       }
     }
     &__content {
+      padding: 0;
+      padding-bottom: 6rem;
       &-top {
         flex-direction: column;
-        padding-bottom: 8rem;
       }
       &-bottom {
         flex-direction: column;
