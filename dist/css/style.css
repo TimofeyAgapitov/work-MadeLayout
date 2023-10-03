@@ -401,24 +401,84 @@ section {
 }
 
 .custom-cursor .effects {
+  display: none;
   position: absolute;
-  top: -1.15rem;
-  left: 1.1rem;
-  width: 2rem;
-  height: 2rem;
 }
 
-.custom-cursor .effects > svg {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  -webkit-animation: cursorEffects 2s ease;
-          animation: cursorEffects 2s ease;
+.custom-cursor .effects .explosion {
+  position: absolute;
+  width: 4px;
+  height: 3rem;
+  border-radius: 0.4rem;
+  -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  overflow: hidden;
 }
 
-.custom-cursor .effects > svg:nth-child(2) {
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+.custom-cursor .effects .explosion:nth-child(1) {
+  -webkit-transform: rotate(0deg) translateY(-1.5rem);
+      -ms-transform: rotate(0deg) translateY(-1.5rem);
+          transform: rotate(0deg) translateY(-1.5rem);
+}
+
+.custom-cursor .effects .explosion:nth-child(2) {
+  -webkit-transform: rotate(45deg) translateY(-1.5rem);
+      -ms-transform: rotate(45deg) translateY(-1.5rem);
+          transform: rotate(45deg) translateY(-1.5rem);
+}
+
+.custom-cursor .effects .explosion:nth-child(3) {
+  -webkit-transform: rotate(90deg) translateY(-1.5rem);
+      -ms-transform: rotate(90deg) translateY(-1.5rem);
+          transform: rotate(90deg) translateY(-1.5rem);
+}
+
+.custom-cursor .effects .explosion:nth-child(4) {
+  -webkit-transform: rotate(180deg) translateY(-1.5rem);
+      -ms-transform: rotate(180deg) translateY(-1.5rem);
+          transform: rotate(180deg) translateY(-1.5rem);
+}
+
+.custom-cursor .effects .explosion:nth-child(5) {
+  -webkit-transform: rotate(225deg) translateY(-1.5rem);
+      -ms-transform: rotate(225deg) translateY(-1.5rem);
+          transform: rotate(225deg) translateY(-1.5rem);
+}
+
+.custom-cursor .effects .explosion:nth-child(6) {
+  -webkit-transform: rotate(270deg) translateY(-1.5rem);
+      -ms-transform: rotate(270deg) translateY(-1.5rem);
+          transform: rotate(270deg) translateY(-1.5rem);
+}
+
+.custom-cursor .effects .explosion:nth-child(7) {
+  -webkit-transform: rotate(315deg) translateY(-1.5rem);
+      -ms-transform: rotate(315deg) translateY(-1.5rem);
+          transform: rotate(315deg) translateY(-1.5rem);
+}
+
+.custom-cursor #firework-effects .explosion::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 1.5rem;
+  background-color: #ffffff;
+}
+
+.custom-cursor #firework-effects {
+  left: 32%;
+  top: 15%;
+  -webkit-transform: scale(0.25);
+      -ms-transform: scale(0.25);
+          transform: scale(0.25);
+}
+
+.custom-cursor #firework-effects .explosion::before {
+  -webkit-animation: cursorEffects 2s ease-in-out;
+          animation: cursorEffects 2s ease-in-out;
 }
 
 @-webkit-keyframes cursorCircle {
@@ -441,18 +501,6 @@ section {
   }
 }
 
-@-webkit-keyframes cursorEffects {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes cursorEffects {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
 @-webkit-keyframes cursorFinger {
   0% {
     opacity: 0;
@@ -470,6 +518,26 @@ section {
 
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes cursorEffects {
+  0% {
+    top: 100%;
+  }
+
+  33%, 100% {
+    top: -50%;
+  }
+}
+
+@keyframes cursorEffects {
+  0% {
+    top: 100%;
+  }
+
+  33%, 100% {
+    top: -50%;
   }
 }
 

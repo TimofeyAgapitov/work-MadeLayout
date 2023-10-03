@@ -209,6 +209,7 @@ const customCursorBlocks = document.querySelectorAll('.content-custom-cursor');
 const customCursor = document.querySelector('.custom-cursor');
 const circle = customCursor.querySelector('.circle');
 const cursor = customCursor.querySelector('.cursor');
+const effect = customCursor.querySelector('.effects');
 
 document.addEventListener('mousemove', (e) => {
   // Обновляем позицию кастомного курсора в соответствии с позицией указателя мыши.
@@ -237,6 +238,10 @@ customCursorBlocks.forEach(function (element) {
     cursor.classList.add('click');
     setTimeout(() => {
       cursor.classList.remove('click');
+      effect.style.display = 'block';
+      setTimeout(() => {
+        effect.style.display = 'none';
+      }, 2000);
     }, 250);
   });
 });
