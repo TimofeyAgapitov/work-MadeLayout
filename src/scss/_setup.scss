@@ -216,10 +216,10 @@ $poluton-grey-color: #454545;
 .setup--hover-grayscale {
   // position: relative;
   filter: grayscale(90%);
-  transition: all 0.5s ease-in-out;
   &:hover {
     filter: none;
-    transition: all 0.5s ease-in-out;
+    transition: filter 0.5s ease-in-out;
+    will-change: filter;
   }
 }
 
@@ -269,5 +269,98 @@ $poluton-grey-color: #454545;
         }
       }
     }
+  }
+}
+
+// cursor
+
+.custom-cursor {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  width: 6rem;
+  height: 6rem;
+  pointer-events: none;
+  .circle {
+    & > svg {
+      width: 6rem;
+      height: 6rem;
+      stroke-dasharray: 200;
+      animation: cursorCircle 1s ease forwards;
+      will-change: animation;
+    }
+  }
+  .cursor {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    &.show {
+      opacity: 1;
+      transition: opacity 0.25s ease;
+    }
+    &.click {
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      svg {
+        animation: cursorFingerClick 0.25s ease forwards;
+      }
+    }
+    & > svg {
+      width: 3.6rem;
+    }
+  }
+  .effects {
+    position: absolute;
+    top: -1.15rem;
+    left: 1.1rem;
+    width: 2rem;
+    height: 2rem;
+    & > svg {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: cursorEffects 2s ease;
+      &:nth-child(2) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+@keyframes cursorCircle {
+  0% {
+    stroke-dashoffset: 200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes cursorEffects {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes cursorFinger {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes cursorFingerClick {
+  0% {
+    width: 3.6rem;
+  }
+  50% {
+    width: 3rem;
+  }
+  100% {
+    width: 3.6rem;
   }
 }

@@ -202,3 +202,41 @@ const swiperRealtyFirst = new Swiper('.swiper-realty', {
   slidersPerView: 1,
   effect: 'fade',
 });
+
+//////////////////////////////// CURSOR //////////////////////////////////
+
+const customCursorBlocks = document.querySelectorAll('.content-custom-cursor');
+const customCursor = document.querySelector('.custom-cursor');
+const circle = customCursor.querySelector('.circle');
+const cursor = customCursor.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+  // Обновляем позицию кастомного курсора в соответствии с позицией указателя мыши.
+  customCursor.style.left = e.pageX - 16 + 'px';
+  customCursor.style.top = e.pageY - 12 + 'px';
+});
+
+// Добавляем слушатель события окончания анимации .circle
+circle.addEventListener('animationend', () => {
+  // Удаляем класс .hide для отображения .cursor после окончания анимации .circle
+  cursor.classList.add('show');
+});
+
+customCursorBlocks.forEach(function (element) {
+  element.addEventListener('mouseenter', (e) => {
+    customCursor.style.display = 'block';
+    document.body.style.cursor = 'none';
+    e.stopPropagation(); // Предотвращаем распространение события на родительский customCursor
+  });
+  element.addEventListener('mouseleave', (e) => {
+    customCursor.style.display = 'none';
+    document.body.style.cursor = 'auto';
+    e.stopPropagation(); // Предотвращаем распространение события на родительский customCursor
+  });
+  element.addEventListener('click', () => {
+    cursor.classList.add('click');
+    setTimeout(() => {
+      cursor.classList.remove('click');
+    }, 250);
+  });
+});
