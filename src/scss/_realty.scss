@@ -116,6 +116,7 @@
       gap: 1.2rem;
     }
     &__component {
+      overflow: hidden;
       &.active {
         flex: 1 0;
         .type-component--disactive {
@@ -123,7 +124,7 @@
         }
         .type-component--active {
           display: flex;
-          animation: fadeIn 0.8s linear;
+          animation: slideInLeft 1s ease-in-out;
           animation-fill-mode: forwards;
         }
       }
