@@ -226,6 +226,16 @@ circle.addEventListener('animationend', () => {
 customCursorBlocks.forEach(function (element) {
   element.addEventListener('mouseenter', (e) => {
     customCursor.style.display = 'block';
+    setTimeout(() => {
+      cursor.classList.add('click');
+      setTimeout(() => {
+        cursor.classList.remove('click');
+        effect.style.display = 'block';
+        setTimeout(() => {
+          effect.style.display = 'none';
+        }, 2000);
+      }, 250);
+    },1000);
     document.body.style.cursor = 'none';
     e.stopPropagation(); // Предотвращаем распространение события на родительский customCursor
   });
@@ -234,14 +244,5 @@ customCursorBlocks.forEach(function (element) {
     document.body.style.cursor = 'auto';
     e.stopPropagation(); // Предотвращаем распространение события на родительский customCursor
   });
-  element.addEventListener('click', () => {
-    cursor.classList.add('click');
-    setTimeout(() => {
-      cursor.classList.remove('click');
-      effect.style.display = 'block';
-      setTimeout(() => {
-        effect.style.display = 'none';
-      }, 2000);
-    }, 250);
-  });
+  element.addEventListener('click', () => {});
 });
