@@ -205,44 +205,160 @@ const swiperRealtyFirst = new Swiper('.swiper-realty', {
 
 //////////////////////////////// CURSOR //////////////////////////////////
 
-const customCursorBlocks = document.querySelectorAll('.content-custom-cursor');
-const customCursor = document.querySelector('.custom-cursor');
-const circle = customCursor.querySelector('.circle');
-const cursor = customCursor.querySelector('.cursor');
-const effect = customCursor.querySelector('.effects');
+if (document.querySelector('.custom-cursor')) {
+  const customCursorBlocks = document.querySelectorAll(
+    '.content-custom-cursor'
+  );
+  const customCursor = document.querySelector('.custom-cursor');
+  const circle = customCursor.querySelector('.circle');
+  const cursor = customCursor.querySelector('.cursor');
+  const effect = customCursor.querySelector('.effects');
 
-document.addEventListener('mousemove', (e) => {
-  // Обновляем позицию кастомного курсора в соответствии с позицией указателя мыши.
-  customCursor.style.left = e.pageX - 16 + 'px';
-  customCursor.style.top = e.pageY - 12 + 'px';
-});
+  document.addEventListener('mousemove', (e) => {
+    // Обновляем позицию кастомного курсора в соответствии с позицией указателя мыши.
+    customCursor.style.left = e.pageX - 16 + 'px';
+    customCursor.style.top = e.pageY - 12 + 'px';
+  });
 
-// Добавляем слушатель события окончания анимации .circle
-circle.addEventListener('animationend', () => {
-  // Удаляем класс .hide для отображения .cursor после окончания анимации .circle
-  cursor.classList.add('show');
-});
+  // Добавляем слушатель события окончания анимации .circle
+  circle.addEventListener('animationend', () => {
+    // Удаляем класс .hide для отображения .cursor после окончания анимации .circle
+    cursor.classList.add('show');
+  });
 
-customCursorBlocks.forEach(function (element) {
-  element.addEventListener('mouseenter', (e) => {
-    customCursor.style.display = 'block';
-    setTimeout(() => {
-      cursor.classList.add('click');
+  customCursorBlocks.forEach(function (element) {
+    element.addEventListener('mouseenter', (e) => {
+      customCursor.style.display = 'block';
       setTimeout(() => {
-        cursor.classList.remove('click');
-        effect.style.display = 'block';
+        cursor.classList.add('click');
         setTimeout(() => {
-          effect.style.display = 'none';
-        }, 2000);
-      }, 250);
-    },1000);
-    document.body.style.cursor = 'none';
-    e.stopPropagation(); // Предотвращаем распространение события на родительский customCursor
+          cursor.classList.remove('click');
+          effect.style.display = 'block';
+          setTimeout(() => {
+            effect.style.display = 'none';
+          }, 2000);
+        }, 250);
+      }, 1000);
+      document.body.style.cursor = 'none';
+      e.stopPropagation(); // Предотвращаем распространение события на родительский customCursor
+    });
+    element.addEventListener('mouseleave', (e) => {
+      customCursor.style.display = 'none';
+      document.body.style.cursor = 'auto';
+      e.stopPropagation(); // Предотвращаем распространение события на родительский customCursor
+    });
+    element.addEventListener('click', () => {});
   });
-  element.addEventListener('mouseleave', (e) => {
-    customCursor.style.display = 'none';
-    document.body.style.cursor = 'auto';
-    e.stopPropagation(); // Предотвращаем распространение события на родительский customCursor
+}
+
+//////////////////////////////// CHART //////////////////////////////////
+
+if (document.querySelector('#chart')) {
+  const ctx = document.getElementById('chart');
+
+  let labelsBottom = ['2021', '2022', '2023'];
+
+  const chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labelsBottom,
+      datasets: [
+        {
+          data: [23, 61, 98],
+          fill: false,
+          borderColor: '#F8EB00',
+          borderWidth: 2,
+          pointRadius: 5,
+          pointBackgroundColor: '#454545',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          pointStyle: 'circle',
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          top: 10,
+          bottom: 0,
+        },
+      },
+      plugins: {
+        legend: {
+          display: false, // Скрываем легенду полностью
+        },
+        tooltip: {
+          enabled: true,
+          yAlign: 'bottom',
+          backgroundColor: '#F8EB00',
+          bodyColor: '#000',
+          bodyFont: {
+            size: 20,
+          },
+          caretPadding: 10,
+          callbacks: {
+            title: function (context) {
+              return '';
+            },
+            label: function (tooltipItem, data) {
+              var value = tooltipItem.formattedValue;
+              return value + '%';
+            },
+          },
+          cornerRaduis: 0,
+          displayColors: false,
+          padding: 4,
+        },
+      },
+      scales: {
+        x: {
+          display: true,
+          offset: true,
+          // offsetCallback: function (scale) {
+          //   return 55; // Устанавливаем отступы слева и справа в 55 пикселей
+          // },
+          border: {
+            color: '#fff',
+            width: 2,
+          },
+          ticks: {
+            color: '#fff', // Устанавливаем цвет меток на белый
+            padding: 8, // Устанавливаем расстояние между метками и линиями
+            fontSize: 20, // Устанавливаем размер шрифта меток на 20px
+          },
+          grid: {
+            display: false,
+            borderColor: '#fff',
+            drawTicks: false, // Убрать разделение на линии оси
+          },
+        },
+        y: {
+          display: true,
+          min: 0, // Минимальное значение оси y
+          max: 100, // Максимальное значение оси y
+          border: {
+            color: '#fff',
+            width: 2,
+          },
+          ticks: {
+            stepSize: 25, // Шаг между метками
+            callback: function (value) {
+              return value + '%'; // Добавляем знак процента к метке
+            },
+            color: '#fff', // Устанавливаем цвет меток на белый
+            padding: 23, // Устанавливаем расстояние между метками и линиями
+            fontSize: 20, // Устанавливаем размер шрифта меток на 20px
+          },
+          grid: {
+            color: '#454545',
+            drawTicks: false, // Убрать разделение на линии оси
+          },
+          // beginAtZero: true, // Начинать с 0%
+        },
+      },
+    },
   });
-  element.addEventListener('click', () => {});
-});
+}
