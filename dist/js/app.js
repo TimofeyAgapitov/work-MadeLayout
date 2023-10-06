@@ -73,10 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Событие для открытия меню
     headerButton.addEventListener('click', () => {
       headerPopup.style.display = 'block';
+      document.body.style.overflow = 'hidden';
     });
     // Событие для закрытия меню
     headerPopupClose.addEventListener('click', () => {
       headerPopup.style.display = 'none';
+      document.body.style.overflow = 'visiable';
     });
   }
   //////////////////////////////// SCRIPT-REALTY //////////////////////////////////
@@ -252,4 +254,3 @@ if (document.querySelector('.custom-cursor')) {
 }
 
 //////////////////////////////// CHART //////////////////////////////////
-
