@@ -569,6 +569,113 @@ section {
   }
 }
 
+.chart {
+  width: 91.8rem;
+  background-color: #292929;
+  padding: 3.6rem;
+}
+
+.chart-title {
+  width: 25.5rem;
+  color: #979797;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 1.2rem;
+  border: 1px solid #979797;
+  margin-bottom: 3.5rem;
+}
+
+.chart-container {
+  height: 29rem;
+  padding-left: 6.1rem;
+  padding-bottom: 3.3rem;
+}
+
+.chart-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 6.2rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.chart-area .line {
+  width: 100%;
+  height: 1px;
+  background-color: #454545;
+}
+
+.chart-data {
+  color: #ffffff;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.chart-line {
+  background-color: #979797;
+}
+
+.chart-line.chart-axisX-line {
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.chart-line.chart-axisY-line {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.chart-point {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #454545;
+  border: 2px solid #ffffff;
+}
+
+.chart-tooltip {
+  display: inline-block;
+  position: relative;
+  color: #101010;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #f8eb00;
+  padding: 0.4rem;
+}
+
+.chart-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 99%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border: 2.5px solid transparent;
+  border-top: 4px solid #f8eb00;
+}
+
 @font-face {
   font-family: Euclid Circular A Italic;
   font-display: swap;
@@ -1714,6 +1821,8 @@ section {
 
 .realty-type__component {
   overflow: hidden;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .realty-type__component.active {
@@ -1730,10 +1839,6 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: slideInLeft 1.5s ease-in-out;
-          animation: slideInLeft 1.5s ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 .realty .type-component--active {

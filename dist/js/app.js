@@ -96,9 +96,6 @@ document.addEventListener('DOMContentLoaded', function () {
       component
         .querySelector('.type-component--disactive')
         .addEventListener('mouseover', () => {
-          // realtyTypeComponents.forEach((component) => {
-          //   component.classList.remove('active');
-          // });
           timer = setTimeout(() => {
             realtyTypeComponents.forEach((component) => {
               component.classList.remove('active');
