@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
               component.classList.remove('active');
             });
             component.classList.add('active');
-          }, 1500);
+          }, 500);
         });
       component.addEventListener('mouseout', () => {
         clearTimeout(timer);
