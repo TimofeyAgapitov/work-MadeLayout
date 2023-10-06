@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .querySelector('.popup-overlay')
         .addEventListener('click', function () {
           element.style.display = 'none';
+          document.body.style.overflow = 'visible';
         });
     });
   }
