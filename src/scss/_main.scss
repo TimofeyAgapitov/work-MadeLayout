@@ -15,6 +15,11 @@
       height: 20.7rem;
     }
   }
+  &__content {
+    a {
+      cursor: none;
+    }
+  }
   &__decoration-top,
   &__decoration-bottom {
     width: 119rem;
