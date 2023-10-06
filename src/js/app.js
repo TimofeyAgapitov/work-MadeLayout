@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Событие для закрытия меню
     headerPopupClose.addEventListener('click', () => {
       headerPopup.style.display = 'none';
-      document.body.style.overflow = 'visiable';
+      document.body.style.overflow = 'visible';
     });
   }
   //////////////////////////////// SCRIPT-REALTY //////////////////////////////////
