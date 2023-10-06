@@ -87,14 +87,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const realtyTypeComponents = realty.querySelectorAll(
       '.realty-type__component'
     );
+    let timer;
+
     realtyTypeComponents[0].classList.add('active');
     // Cобытие если нажимают на плашку с подвидом недвижимости
     realtyTypeComponents.forEach((component) => {
-      component.addEventListener('mouseover', () => {
-        realtyTypeComponents.forEach((component) => {
-          component.classList.remove('active');
+      component
+        .querySelector('.type-component--disactive')
+        .addEventListener('mouseover', () => {
+          // realtyTypeComponents.forEach((component) => {
+          //   component.classList.remove('active');
+          // });
+          timer = setTimeout(() => {
+            realtyTypeComponents.forEach((component) => {
+              component.classList.remove('active');
+            });
+            component.classList.add('active');
+          }, 1500);
         });
-        component.classList.add('active');
+      component.addEventListener('mouseout', () => {
+        clearTimeout(timer);
       });
     });
   }
