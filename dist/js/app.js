@@ -264,3 +264,82 @@ if (document.querySelector('.custom-cursor')) {
 }
 
 //////////////////////////////// CHART //////////////////////////////////
+
+if (document.querySelector('.chart')) {
+  const chart = document.querySelector('.chart');
+  const chartElementAxisY = chart.querySelectorAll('.chart-axisY-data-element'),
+    chartElementAxisX = chart.querySelectorAll('.chart-axisX-data-element'),
+    chartLineAxisY = chart.querySelector('.chart-axisY-line'),
+    chartLineAxisX = chart.querySelector('.chart-axisX-line'),
+    chartLines = chart.querySelectorAll('.chart-area .line'),
+    chartArea = chart.querySelector('.chart-area .chart-area-points');
+
+  const arrayPercent = [23, 61, 98, 66];
+
+  for (let i = 0; i < arrayPercent.length; i++) {
+    // Добавление точек с указателями (количество зависит от размера массива arrayPercent)
+    const chartPointBox = document.createElement('div');
+    chartPointBox.classList.add('chart-point-box');
+
+    const chartTooltip = document.createElement('div');
+    chartTooltip.textContent = `${arrayPercent[i]}%`;
+    chartTooltip.classList.add('chart-tooltip');
+
+    const chartPoint = document.createElement('div');
+    chartPoint.classList.add('chart-point');
+
+    chartPointBox.appendChild(chartTooltip);
+    chartPointBox.appendChild(chartPoint);
+
+    // Выставление позиции для каждого блока с точкой
+    chartPointBox.style.bottom = `${arrayPercent[i] - 1.5}%`;
+    if (window.screen.width > 768) {
+      chartPointBox.style.left = `${
+        (i / (arrayPercent.length - 1)) * 100 - 1
+      }%`;
+    } else {
+      chartPointBox.style.left = `${
+        (i / (arrayPercent.length - 1)) * 100 - 8
+      }%`;
+    }
+
+    // Добавление на график
+    chartArea.appendChild(chartPointBox);
+  }
+
+  const canvas = chart.querySelector('.chart-area-canvas');
+  const ctx = canvas.getContext('2d');
+  const chartPoints = chart.querySelectorAll('.chart-point-box');
+
+  const size = 100;
+  canvas.style.width = `${size}%`;
+  canvas.style.height = `${size}%`;
+
+  // Set actual size in memory (scaled to account for extra pixel density).
+  const scale = window.devicePixelRatio; // Change to 1 on retina screens to see blurry canvas.
+  canvas.width = Math.floor(size * scale);
+  canvas.height = Math.floor(size * scale);
+  // Normalize coordinate system to use CSS pixels.
+  ctx.scale(scale, scale);
+
+  ctx.beginPath();
+  ctx.strokeStyle = '#f8eb00';
+  for (let i = 0; i < chartPoints.length; i++) {
+    let chartPoint = chartPoints[i];
+
+    let x =
+      100 - (parseFloat(chartPoint.style.left) + chartPoint.clientWidth / 2); // Получаем координаты x центра точки
+    let y =
+      100 - (parseFloat(chartPoint.style.bottom) + chartPoint.clientHeight / 2); // Получаем координаты y центра точки
+    console.log(x, y);
+
+    // if (i === 0) {
+    //   ctx.moveTo(x, y);
+    // } else {
+    //   ctx.lineTo(x, y);
+    // }
+  }
+
+  ctx.stroke();
+  ctx.closePath();
+}

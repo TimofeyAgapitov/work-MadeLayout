@@ -576,7 +576,9 @@ section {
 }
 
 .chart-title {
-  width: 25.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: #979797;
   font-size: 2rem;
   font-style: normal;
@@ -591,6 +593,7 @@ section {
   height: 29rem;
   padding-left: 6.1rem;
   padding-bottom: 3.3rem;
+  position: relative;
 }
 
 .chart-area {
@@ -616,12 +619,55 @@ section {
   background-color: #454545;
 }
 
+.chart-area-points {
+  position: absolute;
+  width: calc(100% - 16rem);
+  height: 100%;
+  top: 0;
+  left: 5.8rem;
+  z-index: 2;
+}
+
+.chart-area-canvas {
+  position: absolute;
+  z-index: 1;
+}
+
 .chart-data {
   color: #ffffff;
   font-size: 2rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.chart-axisY-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3.7rem;
+  position: absolute;
+  left: -0.9rem;
+  bottom: 2.5rem;
+}
+
+.chart-axisX-data {
+  width: 78.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 5.8rem;
+  padding-right: 5.3rem;
+  position: absolute;
+  left: 5.8rem;
+  bottom: -0.8rem;
 }
 
 .chart-line {
@@ -644,12 +690,27 @@ section {
   left: 0;
 }
 
+.chart-point-box {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 7px;
+}
+
 .chart-point {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
   background-color: #454545;
-  border: 2px solid #ffffff;
+  border: 0.2rem solid #ffffff;
 }
 
 .chart-tooltip {
@@ -2656,6 +2717,60 @@ body {
 
   .swiper .swiper-pagination-bullet-active {
     background-color: #ffffff;
+  }
+
+  .chart {
+    width: 71rem;
+    padding: 4rem;
+  }
+
+  .chart-title {
+    font-size: 2.8rem;
+    padding: 2.4rem;
+    margin-bottom: 4.8rem;
+  }
+
+  .chart-container {
+    height: 51.6rem;
+    padding-left: 8.8rem;
+    padding-bottom: 5.2rem;
+  }
+
+  .chart-area {
+    gap: 11.6rem;
+  }
+
+  .chart-area-points {
+    width: calc(100% - 11rem);
+  }
+
+  .chart-data {
+    font-size: 2.8rem;
+  }
+
+  .chart-axisY-data {
+    gap: 8rem;
+    left: -1.6rem;
+    bottom: 3.4rem;
+  }
+
+  .chart-axisX-data {
+    width: 54.4rem;
+    padding-left: 4rem;
+    padding-right: 0.8rem;
+    left: 9rem;
+    bottom: -1.6rem;
+  }
+
+  .chart-point {
+    width: 2rem;
+    height: 2rem;
+    border: 0.4rem solid #ffffff;
+  }
+
+  .chart-tooltip {
+    font-size: 2.8rem;
+    padding: 0.8rem 1.6rem;
   }
 
   .header__container {
