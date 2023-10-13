@@ -7,7 +7,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 47.4rem;
+        height: 42.7rem;
         padding: 3.6rem;
         background-image: url('../img/subcategories/subcategories--backgroundPhoto-desktop.png');
         background-repeat: no-repeat;
@@ -44,7 +44,6 @@
         }
       }
       &-bottom {
-        height: 39.8rem;
         padding: 3.6rem;
         background-color: $dark-grey-color;
         &__title {
@@ -56,6 +55,9 @@
           .content {
             &-left {
               width: 33.1rem;
+              &__title {
+                margin-bottom: 2.7rem;
+              }
               &__text {
                 opacity: 0.6;
               }
@@ -129,7 +131,6 @@
           }
         }
         &-bottom {
-          height: 132.8rem;
           padding: 8rem 4rem;
           &__content {
             flex-direction: column;
@@ -137,6 +138,9 @@
             .content {
               &-left {
                 width: 100%;
+                &__title {
+                  margin-bottom: 2.4rem;
+                }
               }
               &-right {
                 align-items: center;
