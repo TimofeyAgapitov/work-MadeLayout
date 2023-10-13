@@ -925,6 +925,10 @@ section {
   z-index: 1000;
 }
 
+.header__container.zIndex {
+  z-index: 2000;
+}
+
 .header__container.marginbottom {
   margin-bottom: 5rem;
 }
@@ -1366,22 +1370,19 @@ section {
   cursor: none;
 }
 
-.main__decoration-top,
-.main__decoration-bottom {
-  width: 119rem;
-}
-
 .main__decoration-top {
   position: absolute;
-  bottom: 38.5rem;
-  left: 42.1rem;
+  width: 95rem;
+  bottom: 56rem;
+  left: 52rem;
   z-index: 1020;
 }
 
 .main__decoration-bottom {
   position: absolute;
-  top: 22.1rem;
-  left: 83.6rem;
+  width: 85rem;
+  top: 42rem;
+  left: 100rem;
   z-index: 1010;
 }
 
@@ -3054,22 +3055,19 @@ body {
     height: 17rem;
   }
 
-  .main__decoration-top,
-  .main__decoration-bottom {
-    width: 90rem;
-  }
-
   .main__decoration-top {
-    top: -35rem;
-    left: -20rem;
-    -webkit-transform: rotate(328deg);
-        -ms-transform: rotate(328deg);
-            transform: rotate(328deg);
+    width: 80rem;
+    top: -40rem;
+    left: -12rem;
+    -webkit-transform: rotate(330deg);
+        -ms-transform: rotate(330deg);
+            transform: rotate(330deg);
   }
 
   .main__decoration-bottom {
-    top: 80rem;
-    left: 6rem;
+    width: 70rem;
+    top: 92rem;
+    left: 14rem;
     -webkit-transform: rotate(205deg);
         -ms-transform: rotate(205deg);
             transform: rotate(205deg);

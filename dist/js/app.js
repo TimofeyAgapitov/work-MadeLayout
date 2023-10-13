@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //////////////////////////////// SCRIPT-HEADER //////////////////////////////////
   if (document.querySelector('.header')) {
     const header = document.querySelector('.header');
+    const headerContainer = header.querySelector('.header__container');
     const headerButton = header.querySelector('.header__button');
     const headerButtonNavigate = header.querySelectorAll('.header__popup-item');
     const headerPopup = header.querySelector('.header__popup');
@@ -74,11 +75,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Событие для открытия меню
     headerButton.addEventListener('click', () => {
       headerPopup.style.display = 'block';
+      headerContainer.classList.add('zIndex');
       document.body.style.overflow = 'hidden';
     });
     // Событие для закрытия меню
     headerPopupClose.addEventListener('click', () => {
       headerPopup.style.display = 'none';
+      headerContainer.classList.remove('zIndex');
       document.body.style.overflow = 'visible';
     });
   }
