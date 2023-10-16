@@ -277,7 +277,7 @@ if (document.querySelector('.chart')) {
     chartLines = chart.querySelectorAll('.chart-area .line'),
     chartArea = chart.querySelector('.chart-area .chart-area-points');
 
-  const arrayPercent = [23, 61, 98, 66];
+  const arrayPercent = [23, 61, 98];
 
   for (let i = 0; i < arrayPercent.length; i++) {
     // Добавление точек с указателями (количество зависит от размера массива arrayPercent)
@@ -296,6 +296,7 @@ if (document.querySelector('.chart')) {
 
     // Выставление позиции для каждого блока с точкой
     chartPointBox.style.bottom = `${arrayPercent[i] - 1.5}%`;
+    // chartPointBox.style.top = `${100 - (arrayPercent[i] + 16)}%`;
     if (window.screen.width > 768) {
       chartPointBox.style.left = `${
         (i / (arrayPercent.length - 1)) * 100 - 1
@@ -318,31 +319,79 @@ if (document.querySelector('.chart')) {
   canvas.style.width = `${size}%`;
   canvas.style.height = `${size}%`;
 
-  // Set actual size in memory (scaled to account for extra pixel density).
-  const scale = window.devicePixelRatio; // Change to 1 on retina screens to see blurry canvas.
+  const scale = window.devicePixelRatio;
+  console.log(scale);
   canvas.width = Math.floor(size * scale);
   canvas.height = Math.floor(size * scale);
-  // Normalize coordinate system to use CSS pixels.
+
   ctx.scale(scale, scale);
 
   ctx.beginPath();
+
   ctx.strokeStyle = '#f8eb00';
+  ctx.lineWidth = 1;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.miterLimit = 2;
+  ctx.imageSmoothingEnabled = false;
+
   for (let i = 0; i < chartPoints.length; i++) {
     let chartPoint = chartPoints[i];
 
-    let x =
-      100 - (parseFloat(chartPoint.style.left) + chartPoint.clientWidth / 2); // Получаем координаты x центра точки
-    let y =
-      100 - (parseFloat(chartPoint.style.bottom) + chartPoint.clientHeight / 2); // Получаем координаты y центра точки
-    console.log(x, y);
+    let x = 0.5 + parseFloat(chartPoint.style.left); // + chartPoint.clientWidth / 2; // Получаем координаты x центра точки
+    let y = 98 - parseFloat(chartPoint.style.bottom); // + chartPoint.clientHeight / 2; // Получаем координаты y центра точки
 
-    // if (i === 0) {
-    //   ctx.moveTo(x, y);
-    // } else {
-    //   ctx.lineTo(x, y);
-    // }
+    if (i === 0) {
+      ctx.moveTo(x, y);
+    } else {
+      ctx.lineTo(x, y);
+    }
   }
 
   ctx.stroke();
   ctx.closePath();
+
+  var chartAnimation = anime.timeline({
+    autoplay: true,
+  });
+
+  anime({
+    targets: '.chart .chart-axisY-line',
+    height: '100%',
+    duration: 1000,
+    easing: 'linear',
+  });
+  anime({
+    targets: '.chart .chart-axisX-line',
+    width: '100%',
+    duration: 1000,
+    easing: 'linear',
+  });
+  anime({
+    targets: '.chart-area .line',
+    width: '100%',
+    duration: 1000,
+    easing: 'linear',
+  });
+
+  // anime({
+  //   targets: ['.chart-axisY-data-element'],
+  //   scaleX: [0, 1],
+  //   duration: 1000,
+  //   easing: 'linear',
+  // });
+
+  // chartAnimation
+  //   .add({
+  //     targets: '.chart .chart-axisY-line',
+  //     height: '100%',
+  //     duration: 1000,
+  //     easing: 'linear',
+  //   })
+  //   .add({
+  //     targets: '.chart .chart-axisX-line',
+  //     width: '100%',
+  //     duration: 1000,
+  //     easing: 'linear',
+  //   });
 }
