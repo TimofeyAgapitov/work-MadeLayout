@@ -284,14 +284,23 @@ if (document.querySelector('.chart')) {
     const chartPointBox = document.createElement('div');
     chartPointBox.classList.add('chart-point-box');
 
+    const chartAnimationBlock = document.createElement('div');
+    chartAnimationBlock.classList.add('chart-animation-block', 'tooltip');
+
+    const chartAnimationBox = document.createElement('div');
+    chartAnimationBox.classList.add('chart-animation-box', 'tooltip');
+
     const chartTooltip = document.createElement('div');
     chartTooltip.textContent = `${arrayPercent[i]}%`;
     chartTooltip.classList.add('chart-tooltip');
 
+    chartAnimationBox.appendChild(chartTooltip);
+    chartAnimationBlock.appendChild(chartAnimationBox);
+
     const chartPoint = document.createElement('div');
     chartPoint.classList.add('chart-point');
 
-    chartPointBox.appendChild(chartTooltip);
+    chartPointBox.appendChild(chartAnimationBlock);
     chartPointBox.appendChild(chartPoint);
 
     // Выставление позиции для каждого блока с точкой
@@ -311,13 +320,20 @@ if (document.querySelector('.chart')) {
     chartArea.appendChild(chartPointBox);
   }
 
+  // canvas chart
+
   const canvas = chart.querySelector('.chart-area-canvas');
   const ctx = canvas.getContext('2d');
   const chartPoints = chart.querySelectorAll('.chart-point-box');
 
   const size = 100;
-  canvas.style.width = `${size}%`;
-  canvas.style.height = `${size}%`;
+  if (window.screen.width > 768) {
+    canvas.style.width = `77.7rem`;
+    canvas.style.height = `25.7rem`;
+  } else {
+    canvas.style.width = `54.2rem`;
+    canvas.style.height = `46.4rem`;
+  }
 
   const scale = window.devicePixelRatio;
   console.log(scale);
@@ -338,8 +354,15 @@ if (document.querySelector('.chart')) {
   for (let i = 0; i < chartPoints.length; i++) {
     let chartPoint = chartPoints[i];
 
-    let x = 0.5 + parseFloat(chartPoint.style.left); // + chartPoint.clientWidth / 2; // Получаем координаты x центра точки
-    let y = 98 - parseFloat(chartPoint.style.bottom); // + chartPoint.clientHeight / 2; // Получаем координаты y центра точки
+    let x, y;
+
+    if (window.screen.width > 768) {
+      x = 0.5 + parseFloat(chartPoint.style.left);
+      y = 98 - parseFloat(chartPoint.style.bottom);
+    } else {
+      x = (parseFloat(chartPoint.style.left) + chartPoint.clientWidth / 2 + 16) - 29;
+      y = 121 - (parseFloat(chartPoint.style.bottom) + chartPoint.clientHeight / 2);
+    }
 
     if (i === 0) {
       ctx.moveTo(x, y);
@@ -351,47 +374,52 @@ if (document.querySelector('.chart')) {
   ctx.stroke();
   ctx.closePath();
 
+  // animation chart
+
   var chartAnimation = anime.timeline({
     autoplay: true,
   });
 
   anime({
     targets: '.chart .chart-axisY-line',
-    height: '100%',
+    height: ['0%', '100%'],
     duration: 1000,
     easing: 'linear',
   });
   anime({
     targets: '.chart .chart-axisX-line',
-    width: '100%',
+    width: ['0%', '100%'],
     duration: 1000,
     easing: 'linear',
   });
   anime({
     targets: '.chart-area .line',
-    width: '100%',
+    width: ['0%', '100%'],
     duration: 1000,
     easing: 'linear',
   });
 
-  // anime({
-  //   targets: ['.chart-axisY-data-element'],
-  //   scaleX: [0, 1],
-  //   duration: 1000,
-  //   easing: 'linear',
-  // });
-
-  // chartAnimation
-  //   .add({
-  //     targets: '.chart .chart-axisY-line',
-  //     height: '100%',
-  //     duration: 1000,
-  //     easing: 'linear',
-  //   })
-  //   .add({
-  //     targets: '.chart .chart-axisX-line',
-  //     width: '100%',
-  //     duration: 1000,
-  //     easing: 'linear',
-  //   });
+  chartAnimation
+    .add({
+      targets: '.chart-point',
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'linear',
+      delay: 1500,
+    })
+    .add({
+      targets: '.chart-canvas-box',
+      width: [
+        { value: '50%', duration: 1000, delay: 1000 },
+        { value: '100%', duration: 1000, delay: 1000 },
+      ],
+      duration: 3000,
+      easing: 'linear',
+    })
+    .add({
+      targets: ['.chart-animation-box'],
+      width: ['0', '100%'],
+      duration: 1000,
+      easing: 'linear',
+    });
 }

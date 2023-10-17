@@ -628,15 +628,69 @@ section {
   z-index: 2;
 }
 
+.chart-canvas-box {
+  position: absolute;
+  overflow: hidden;
+  width: 0%;
+  height: 100%;
+}
+
 .chart-area-canvas {
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
   padding-left: 8rem;
   padding-right: 8rem;
 }
 
+.chart-animation-block {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+
+.chart-animation-block.axisY {
+  width: 5rem;
+  height: 2.6rem;
+}
+
+.chart-animation-block.axisX {
+  width: 4.8rem;
+  height: 2.6rem;
+}
+
+.chart-animation-block.tooltip {
+  width: 5.05rem;
+  height: 3.8rem;
+}
+
 .chart-animation-box {
+  position: relative;
+  height: 100%;
   overflow: hidden;
+}
+
+.chart-animation-box.axisY {
+  width: 5rem;
+}
+
+.chart-animation-box.axisX {
+  width: 4.8rem;
+}
+
+.chart-animation-box.tooltip {
+  width: 5.05rem;
 }
 
 .chart-data {
@@ -661,6 +715,15 @@ section {
   bottom: 2.5rem;
 }
 
+.chart-axisY-data-element {
+  width: 5rem;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .chart-axisX-data {
   width: 78.5rem;
   display: -webkit-box;
@@ -676,20 +739,29 @@ section {
   bottom: -0.8rem;
 }
 
+.chart-axisX-data-element {
+  width: 4.8rem;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .chart-line {
   background-color: #979797;
 }
 
 .chart-line.chart-axisY-line {
   width: 2px;
-  height: 0%;
+  height: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
 .chart-line.chart-axisX-line {
-  width: 0%;
+  width: 100%;
   height: 2px;
   position: absolute;
   bottom: 0;
@@ -721,7 +793,12 @@ section {
 
 .chart-tooltip {
   display: inline-block;
-  position: relative;
+  width: 5.05rem;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   color: #101010;
   font-size: 2rem;
   font-style: normal;
@@ -2073,17 +2150,16 @@ section {
 
 .about-us__content .content-bottom {
   width: 100%;
-  height: 43.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  gap: 1.2rem;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  position: relative;
 }
 
 .about-us__content .content-bottom__background {
@@ -2120,6 +2196,12 @@ section {
   width: 49.5rem;
   color: #ffffff;
   padding-top: 1.1rem;
+}
+
+.about-us__movie {
+  width: 91.8rem;
+  height: 44.8rem;
+  position: relative;
 }
 
 .about-us-assets__content {
@@ -2741,7 +2823,7 @@ body {
   .chart-title {
     font-size: 2.8rem;
     padding: 2.4rem;
-    margin-bottom: 4.8rem;
+    margin-bottom: 6.8rem;
   }
 
   .chart-container {
@@ -2759,8 +2841,35 @@ body {
   }
 
   .chart-area-canvas {
-    padding-left: 5.5rem;
-    padding-right: 5.5rem;
+    padding-left: 6rem;
+    padding-right: 4.6rem;
+  }
+
+  .chart-animation-block.axisY {
+    width: 8rem;
+    height: 3.6rem;
+  }
+
+  .chart-animation-block.axisX {
+    width: 6.4rem;
+    height: 3.6rem;
+  }
+
+  .chart-animation-block.tooltip {
+    width: 9.2rem;
+    height: 6rem;
+  }
+
+  .chart-animation-box.axisY {
+    width: 8rem;
+  }
+
+  .chart-animation-box.axisX {
+    width: 6.4rem;
+  }
+
+  .chart-animation-box.tooltip {
+    width: 9.2rem;
   }
 
   .chart-data {
@@ -2773,12 +2882,20 @@ body {
     bottom: 3.4rem;
   }
 
+  .chart-axisY-data-element {
+    width: 8rem;
+  }
+
   .chart-axisX-data {
     width: 54.4rem;
     padding-left: 4rem;
     padding-right: 0.8rem;
     left: 9rem;
     bottom: -1.6rem;
+  }
+
+  .chart-axisX-data-element {
+    width: 6.4rem;
   }
 
   .chart-point {
@@ -2788,6 +2905,7 @@ body {
   }
 
   .chart-tooltip {
+    width: 9.2rem;
     font-size: 2.8rem;
     padding: 0.8rem 1.6rem;
   }
@@ -3460,7 +3578,10 @@ body {
   }
 
   .about-us__content .content-bottom {
-    height: 87.6rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .about-us__content .content-bottom__box {
@@ -3483,6 +3604,11 @@ body {
   .about-us__content .content-bottom__info .info-text {
     width: 100%;
     padding-top: 2.4rem;
+  }
+
+  .about-us__movie {
+    width: 71rem;
+    height: 87.6rem;
   }
 
   .about-us-assets__content {
