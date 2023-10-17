@@ -806,6 +806,7 @@ section {
   line-height: normal;
   background-color: #f8eb00;
   padding: 0.4rem;
+  text-align: center;
 }
 
 .chart-tooltip::after {
