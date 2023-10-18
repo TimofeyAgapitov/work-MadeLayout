@@ -2164,8 +2164,8 @@ section {
 }
 
 .about-us__content .content-bottom__background {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 44.8rem;
   overflow: hidden;
 }
 
@@ -2200,8 +2200,9 @@ section {
 }
 
 .about-us__movie {
-  width: 91.8rem;
-  height: 44.8rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0;
+          flex: 1 0;
   position: relative;
 }
 
@@ -3585,6 +3586,10 @@ body {
             flex-direction: column;
   }
 
+  .about-us__content .content-bottom__background {
+    height: 87.6rem;
+  }
+
   .about-us__content .content-bottom__box {
     -webkit-box-flex: 1;
         -ms-flex: 1 0;
@@ -3609,7 +3614,6 @@ body {
 
   .about-us__movie {
     width: 71rem;
-    height: 87.6rem;
   }
 
   .about-us-assets__content {

@@ -26,8 +26,8 @@
         // background-size: cover;
         // background-repeat: no-repeat;
         &__background {
-          width: inherit;
-          height: inherit;
+          width: 100%;
+          height: 44.8rem;
           overflow: hidden;
           > video {
             object-fit: cover;
@@ -59,8 +59,7 @@
     }
   }
   &__movie {
-    width: 91.8rem;
-    height: 44.8rem;
+    flex: 1 0;
     position: relative;
   }
 }
@@ -82,6 +81,9 @@
           // height: 87.6rem;
           // padding: 8rem 4rem;
           // background-image: url('../img/about-us/about-us--backgroundPhoto-mobile.png');
+          &__background {
+            height: 87.6rem;
+          }
           &__box {
             flex: 1 0;
             bottom: 8rem;
@@ -105,7 +107,6 @@
     }
     &__movie {
       width: 71rem;
-      height: 87.6rem;
     }
   }
 }
