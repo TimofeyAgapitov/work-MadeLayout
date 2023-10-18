@@ -337,8 +337,10 @@
             }
             &-location {
               cursor: pointer;
-              position: absolute;
-              left: 38rem;
+              position: static;
+              &.mobile {
+                display: none;
+              }
               &__icon {
                 width: 3.2rem;
                 height: 3.2rem;
@@ -483,6 +485,12 @@
               }
               &-location {
                 position: static;
+                &.desctop {
+                  display: none;
+                }
+                &.mobile {
+                  display: block;
+                }
                 &__icon {
                   width: 4.8rem;
                   height: 4.8rem;

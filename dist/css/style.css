@@ -2635,8 +2635,11 @@ section {
 
 .subcategories-projects__content .content__projects .project-location {
   cursor: pointer;
-  position: absolute;
-  left: 38rem;
+  position: static;
+}
+
+.subcategories-projects__content .content__projects .project-location.mobile {
+  display: none;
 }
 
 .subcategories-projects__content .content__projects .project-location__icon {
@@ -3862,6 +3865,14 @@ body {
 
   .subcategories-projects__content .content__projects .project-location {
     position: static;
+  }
+
+  .subcategories-projects__content .content__projects .project-location.desctop {
+    display: none;
+  }
+
+  .subcategories-projects__content .content__projects .project-location.mobile {
+    display: block;
   }
 
   .subcategories-projects__content .content__projects .project-location__icon {
