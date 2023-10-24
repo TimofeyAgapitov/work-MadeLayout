@@ -2420,6 +2420,7 @@ section {
 .subcategories-property__title {
   color: #f8eb00;
   margin-bottom: 0.8rem;
+  text-align: center;
 }
 
 .subcategories-property__text {
@@ -3861,6 +3862,10 @@ body {
   .subcategories-projects__content .content__projects .project-icons__icon {
     width: 4.8rem;
     height: 4.8rem;
+  }
+
+  .subcategories-projects__content .content__projects .project-icons__text {
+    font-size: 2.6rem;
   }
 
   .subcategories-projects__content .content__projects .project-location {

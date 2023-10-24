@@ -345,7 +345,7 @@ if (document.querySelector('.chart')) {
   ctx.beginPath();
 
   ctx.strokeStyle = '#f8eb00';
-  ctx.lineWidth = 1;
+  ctx.lineWidth = 1.25;
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
   ctx.miterLimit = 2;
