@@ -91,6 +91,10 @@
     .icon {
       object-fit: contain;
       height: 6.6rem;
+      &._white {
+        filter: grayscale(1) brightness(1000%);
+        will-change: filter;
+      }
     }
   }
 }

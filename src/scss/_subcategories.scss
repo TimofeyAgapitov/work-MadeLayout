@@ -73,7 +73,8 @@
   }
   &-property {
     width: 45.2rem;
-    height: 26.9rem;
+    min-height: 26.9rem;
+    padding: 3.6rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,7 +156,8 @@
     }
     &-property {
       width: 63rem;
-      height: 29rem;
+      min-height: 29rem;
+      padding: 4rem 0;
       border: 0.3rem solid #7d7d7d;
       &__box {
         width: 48.8rem;

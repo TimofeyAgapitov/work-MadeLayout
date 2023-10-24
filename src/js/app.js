@@ -150,6 +150,26 @@ if (document.querySelector('.partners')) {
   }
 }
 
+if (document.querySelector('.partners-box')) {
+  const partnersBoxes = document.querySelectorAll('.partners-box');
+  partnersBoxes.forEach((box) => {
+    // box.addEventListener('mouseover', () => {
+    //   let source = box.querySelector('.icon').dataset.hover;
+    //   box.querySelector('.icon').src = `../img/partners/${source}.svg`;
+    // });
+    // box.addEventListener('mouseout', () => {
+    //   let source = box.querySelector('.icon').dataset.default;
+    //   box.querySelector('.icon').src = `../img/partners/${source}.svg`;
+    // });
+    box.addEventListener('mouseover', () => {
+      box.querySelector('.icon').classList.remove('_white');
+    });
+    box.addEventListener('mouseout', () => {
+      box.querySelector('.icon').classList.add('_white');
+    });
+  });
+}
+
 //////////////////////////////// SWIPERS //////////////////////////////////
 
 const rem = function (rem) {
@@ -360,8 +380,14 @@ if (document.querySelector('.chart')) {
       x = 0.5 + parseFloat(chartPoint.style.left);
       y = 98 - parseFloat(chartPoint.style.bottom);
     } else {
-      x = (parseFloat(chartPoint.style.left) + chartPoint.clientWidth / 2 + 16) - 29;
-      y = 121 - (parseFloat(chartPoint.style.bottom) + chartPoint.clientHeight / 2);
+      x =
+        parseFloat(chartPoint.style.left) +
+        chartPoint.clientWidth / 2 +
+        16 -
+        29;
+      y =
+        121 -
+        (parseFloat(chartPoint.style.bottom) + chartPoint.clientHeight / 2);
     }
 
     if (i === 0) {

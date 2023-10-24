@@ -1720,6 +1720,12 @@ section {
   height: 6.6rem;
 }
 
+.partners-icon .icon._white {
+  -webkit-filter: grayscale(1) brightness(1000%);
+          filter: grayscale(1) brightness(1000%);
+  will-change: filter;
+}
+
 .project__container {
   padding-top: 3.5rem;
   height: 81.5rem;
@@ -2381,7 +2387,8 @@ section {
 
 .subcategories-property {
   width: 45.2rem;
-  height: 26.9rem;
+  min-height: 26.9rem;
+  padding: 3.6rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3733,7 +3740,8 @@ body {
 
   .subcategories-property {
     width: 63rem;
-    height: 29rem;
+    min-height: 29rem;
+    padding: 4rem 0;
     border: 0.3rem solid #7d7d7d;
   }
 
