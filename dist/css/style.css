@@ -1499,10 +1499,13 @@ section {
 .main__content .content__center-block:hover .picture--special,
 .main__content .content__right-block:hover .picture,
 .main__content .content__right-block:hover .picture--special {
-  -webkit-filter: none;
-          filter: none;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+  -webkit-transition: -webkit-filter 0.5s ease-in-out;
+  transition: -webkit-filter 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out, -webkit-filter 0.5s ease-in-out;
+  will-change: filter;
 }
 
 .main__content .content__info-left {
@@ -1630,7 +1633,7 @@ section {
 }
 
 .partners__content .content-left__info .info-box {
-  width: 14.7rem;
+  min-width: 14.7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1915,6 +1918,12 @@ section {
           justify-content: space-between;
   padding: 3.6rem;
   background-color: #292929;
+}
+
+.realty__content .content-right._d-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .realty__content .content-right__info .info-title {

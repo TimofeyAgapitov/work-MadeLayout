@@ -107,8 +107,9 @@
         &:hover {
           .picture,
           .picture--special {
-            filter: none;
-            transition: all 0.5s ease-in-out;
+            filter: brightness(70%);
+            transition: filter 0.5s ease-in-out;
+            will-change: filter;
           }
         }
       }

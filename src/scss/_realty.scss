@@ -16,6 +16,9 @@
         justify-content: space-between;
         padding: 3.6rem;
         background-color: $dark-grey-color;
+        &._d-center {
+          justify-content: center;
+        }
         &__info {
           .info {
             &-title {
