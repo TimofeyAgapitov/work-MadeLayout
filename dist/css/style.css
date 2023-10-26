@@ -1493,14 +1493,24 @@ section {
   position: relative;
 }
 
+.main__content .content__left-block .picture,
+.main__content .content__left-block .picture--special,
+.main__content .content__center-block .picture,
+.main__content .content__center-block .picture--special,
+.main__content .content__right-block .picture,
+.main__content .content__right-block .picture--special {
+  -webkit-filter: grayscale(90%) brightness(70%);
+          filter: grayscale(90%) brightness(70%);
+}
+
 .main__content .content__left-block:hover .picture,
 .main__content .content__left-block:hover .picture--special,
 .main__content .content__center-block:hover .picture,
 .main__content .content__center-block:hover .picture--special,
 .main__content .content__right-block:hover .picture,
 .main__content .content__right-block:hover .picture--special {
-  -webkit-filter: brightness(70%);
-          filter: brightness(70%);
+  -webkit-filter: grayscale(0%) brightness(70%);
+          filter: grayscale(0%) brightness(70%);
   -webkit-transition: -webkit-filter 0.5s ease-in-out;
   transition: -webkit-filter 0.5s ease-in-out;
   transition: filter 0.5s ease-in-out;
@@ -2265,7 +2275,7 @@ section {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding: 4rem 3.6rem;
+  padding: 2.5rem 3.6rem;
 }
 
 .about-us-assets__content .content-right__list .list-item:not(:last-child) {

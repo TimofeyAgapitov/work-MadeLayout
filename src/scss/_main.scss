@@ -104,10 +104,14 @@
       &__center-block,
       &__right-block {
         position: relative;
+        .picture,
+        .picture--special {
+          filter: grayscale(90%) brightness(70%);
+        }
         &:hover {
           .picture,
           .picture--special {
-            filter: brightness(70%);
+            filter: grayscale(0%) brightness(70%);
             transition: filter 0.5s ease-in-out;
             will-change: filter;
           }
