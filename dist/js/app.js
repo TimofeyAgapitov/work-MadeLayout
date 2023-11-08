@@ -143,24 +143,51 @@ if (document.querySelector('.partners')) {
     }, 5000);
   }, 8000);
 
-  if (screen.width > 768 && partnersArray.length != 9) {
-    partnersContent.appendChild(partnersElement);
-  } else {
-    partnersContent.removeChild(partnersElement);
+  if (screen.width > 768) {
+    updateGrid();
+  }
+
+  function updateGrid() {
+    let partnersBoxesCount = 0;
+
+    partnersArray.forEach((el) => {
+      if (!el.classList.contains('disactive')) {
+        partnersBoxesCount++;
+      }
+    });
+    console.log(partnersBoxesCount);
+
+    if (partnersBoxesCount < 9) {
+      console.log('2');
+      partnersContent.classList.remove('_4x3');
+      while (partnersBoxesCount < 9) {
+        let newElement = document.createElement('div');
+        newElement.classList.add('partners-box', 'disactive');
+        partnersContent.appendChild(newElement);
+        partnersBoxesCount++;
+      }
+    }
+
+    if (partnersBoxesCount > 9) {
+      partnersContent.classList.add('_4x3');
+
+      while (partnersBoxesCount < 12) {
+        let newElement = document.createElement('div');
+        newElement.classList.add('partners-box', 'disactive');
+        partnersContent.appendChild(newElement);
+        partnersBoxesCount++;
+      }
+      console.log(partnersBoxesCount)
+    } else {
+      partnersContent.classList.remove('_4x3');
+      console.log('3');
+    }
   }
 }
 
 if (document.querySelector('.partners-box')) {
   const partnersBoxes = document.querySelectorAll('.partners-box');
   partnersBoxes.forEach((box) => {
-    // box.addEventListener('mouseover', () => {
-    //   let source = box.querySelector('.icon').dataset.hover;
-    //   box.querySelector('.icon').src = `../img/partners/${source}.svg`;
-    // });
-    // box.addEventListener('mouseout', () => {
-    //   let source = box.querySelector('.icon').dataset.default;
-    //   box.querySelector('.icon').src = `../img/partners/${source}.svg`;
-    // });
     box.addEventListener('mouseover', () => {
       box.querySelector('.icon').classList.remove('_white');
     });
