@@ -133,6 +133,10 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          &__title {
+            max-width: 40.5rem;
+            margin-bottom: 2.4rem;
+          }
           &__text {
             color: $light-grey-color;
           }
@@ -147,7 +151,7 @@
                 display: flex;
                 gap: 4rem;
                 justify-content: flex-start;
-                padding: 2.5rem 3.6rem;
+                padding: 3.2rem 3.6rem;
                 &:not(:last-child) {
                   border-bottom: 0.2rem solid $poluton-grey-color;
                 }
@@ -177,6 +181,12 @@
         .content {
           &-left {
             width: 100%;
+            flex-direction: column-reverse;
+            gap: 8rem;
+            &__title {
+              max-width: 100%;
+              margin-bottom: 0;
+            }
             &__text {
               display: none;
             }

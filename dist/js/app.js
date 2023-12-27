@@ -155,7 +155,7 @@ if (document.querySelector('.partners')) {
         partnersBoxesCount++;
       }
     });
-    console.log(partnersBoxesCount);
+    console.log(partnersBoxesCount);  
 
     if (partnersBoxesCount < 9) {
       console.log('2');
